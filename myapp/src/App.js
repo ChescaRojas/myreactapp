@@ -3,15 +3,29 @@ import React from 'react';
 import './App.css';
 import Navbar from './Components/Navbar';
 import { BrowserRouter as Router} from 'react-router-dom';
-import CarWidget from './Components/Navbar/CarWidget';
 import ItemList from './Components/ItemList';
 
 function App() {
+  let names = [
+    'Naranjas',
+    'Manzanas',
+    'Peras',
+    'Anana'
+  ];
+
+  let itemsInTheCart = 0;
+
+  function AddToTheCart () {
+    itemsInTheCart += 1;
+    console.log('entre')
+  };
+
+
   return (
     <Router>
       <Navbar />
-      <CarWidget />
-      <ItemList/>
+      <ItemList names={names} AddToTheCart={AddToTheCart}/>
+      <div>{itemsInTheCart}</div>
     </Router>
     
   );

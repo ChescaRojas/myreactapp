@@ -1,4 +1,5 @@
 import React from 'react';
+import CarWidget from './CarWidget';
 import {
     Nav,
     NavLink,
@@ -30,7 +31,9 @@ const Navbar = () => {
                         Sign up
                     </NavLink>
                 </NavMenu>
-               
+
+                <CarWidget />
+
             </Nav>
         </>
     )

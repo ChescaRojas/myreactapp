@@ -1,16 +1,13 @@
-import React from 'react'
+import React from "react"
 
-const ItemList = () => {
-    return (
-        <div>
-            <ol>
-                <li>Julio</li>
-                <li>Carmen</li>
-                <li>Ignacio</li>
-                <li>Elena</li>
-            </ol>
-        </div>
-    )
+function ItemList({names, AddToTheCart}) {
+
+return <>
+	{
+	names.map(names => <div key={names} onClick={AddToTheCart}>{names}</div>)
+	}
+</>;
 }
 
-export default ItemList
+export default ItemList;
+
