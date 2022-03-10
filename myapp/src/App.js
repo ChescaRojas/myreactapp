@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './Components/Navbar';
 import { BrowserRouter as Router} from 'react-router-dom';
 import ItemList from './Components/ItemList';
+import ItemCount from './Components/ItemCount';
 
 function App() {
   let names = [
@@ -12,20 +13,12 @@ function App() {
     'Peras',
     'Anana'
   ];
-
-  let itemsInTheCart = 0;
-
-  function AddToTheCart () {
-    itemsInTheCart += 1;
-    console.log('entre')
-  };
-
-
   return (
     <Router>
       <Navbar />
-      <ItemList names={names} AddToTheCart={AddToTheCart}/>
-      <div>{itemsInTheCart}</div>
+      <br></br>
+      <ItemCount stock={8} inicial={0} />
+      {/* <ItemList names={names}/> */}
     </Router>
     
   );
