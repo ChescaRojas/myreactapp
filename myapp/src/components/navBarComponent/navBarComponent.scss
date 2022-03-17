@@ -1,0 +1,14 @@
+.navBar{
+    width: 100vw;
+    height: 15vh;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    a { 
+        color: white;
+        font-weight: 400;
+    }
+}
