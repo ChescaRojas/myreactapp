@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import ItemList from "../itemListComponent/itemList";
 import "./itemListContainer.scss"
 
-export default function ItemListContainer() {
+export default function ItemListContainer(setItemDetail) {
   const [products, setProducts] = useState([]);
   const mockProducts = [
     {
       id: "1",
       name: "Tulipan",
       price: 250,
+      stock: 5,
       description: "Ramos de tulipanes",
       url: "https://m.media-amazon.com/images/I/71bU-SlZtGL._AC_SL1500_.jpg"
     },
@@ -16,6 +17,7 @@ export default function ItemListContainer() {
       id: "2",
       name: "Girasoles",
       price: 350,
+      stock: 5,
       description: "Ramos de girasoles",
       url: "https://cdn.domestika.org/c_fit,dpr_1.0,f_auto,t_base_params,w_820/v1597989013/content-items/005/559/398/IMG_6129_2-original.jpg?1597989013"
     },
@@ -23,19 +25,20 @@ export default function ItemListContainer() {
       id: "3",
       name: "Rosa",
       price: 500,
+      stock: 5,
       description: "Ramos de rosas",
       url: "https://png.pngtree.com/png-clipart/20210309/original/pngtree-two-blooming-red-roses-flower-photography-picture-png-image_5809549.jpg"
     },
   ]
 
-  const aux = new Promise((res, rej) => {
+  const aux = new Promise((res) => {
     setTimeout(()=>{
       res(setProducts(mockProducts))
     }, 1000)
   })
 
   return (<div className="itemList">
-    {products.length ? <ItemList items={products} /> : "Cargando.."}
+    {products.length ? <ItemList items={products} setItemDetail={setItemDetail} /> : "Cargando.."}
   </div>)
 
 }
