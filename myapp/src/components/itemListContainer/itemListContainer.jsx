@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ItemList from "../itemListComponent/itemList";
 import "./itemListContainer.scss"
 
-export default function ItemListContainer(setItemDetail) {
+export default function ItemListContainer({setItemDetail}) {
   const [products, setProducts] = useState([]);
   const mockProducts = [
     {
@@ -38,7 +38,7 @@ export default function ItemListContainer(setItemDetail) {
   })
 
   return (<div className="itemList">
-    {products.length ? <ItemList items={products} setItemDetail={setItemDetail} /> : "Cargando.."}
+    {products.length ? <ItemList items={products} setItemDetail={setItemDetail} /> : "Cargando..."}
   </div>)
 
 }

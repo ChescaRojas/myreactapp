@@ -1,15 +1,14 @@
 import React from "react";
 import './navBarComponent.scss';
 import  CartWidget from '../cartWidget/cartWidget'
+import { Link } from 'react-router-dom'
+
 export default function NavBarComponent({intemsInCart}){
-      return( <div className="navBar">
-        <a className="selectMenu">
-          <h1>LOGO</h1>
-          </a>
-        <a className="selectMenu">Inicio</a>
-        <a className="selectMenu">Flores</a>
-        <a className="selectMenu">Contactanos</a>
-        <a className="selectMenu">Servicio</a>
+      return( <nav className="navBar">
+        <Link to="/"><a><h1>LOGO</h1></a></Link>
+        <Link to="/"><a>Inicio</a></Link>
+        <Link to="/"><a>Productos</a></Link>
+        <Link to="/"><a>Nosotros</a></Link>
         <CartWidget number={intemsInCart}/>
-      </div>)
+      </nav>)
 }
