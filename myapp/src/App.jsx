@@ -20,7 +20,7 @@ export default function App() {
       <div>
         <NavBarComponent />
         <Routes>
-        <Route path="/item/:id"element={<ItemDetailsContainer item={itemDetail} />}/> 
+        <Route path="/item/:id"element={<ItemDetailsContainer item={itemDetail}/>}/> 
           <Route exact path="/">
             <Route exact path='/' element={ <ItemListContainer setItemDetail={setItemDetail} />}/> 
           </Route>
