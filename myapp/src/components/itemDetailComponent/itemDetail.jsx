@@ -15,10 +15,6 @@ export default function ItemDetail({ item }) {
           setNumero(numero - 1)
     }
 
-  const addToCart = (item) => {
-      console.log(item)
-    }
-
   return (<div className="itemDetails">
     <img className="itemDetails__image" src={item.url} />
     <div className="itemDetails__card">
@@ -27,7 +23,7 @@ export default function ItemDetail({ item }) {
       <span  className="itemDetails__card__price" >{item.price}</span>
     </div>
     <div className="itemDetails__count">
-    <ItemCount numero={numero} stock={item.stock} sumToCart={sumToCart} subtractToCart={subtractToCart} addToCart={addToCart}/>
+    <ItemCount numero={numero} item={item} sumToCart={sumToCart} subtractToCart={subtractToCart} />
     </div>
   </div>)
 

@@ -1,8 +1,20 @@
 import React from "react";
-import { useState } from "react";
+import { useContext } from "react";
 import "./itemCount.scss"
+import { ProductsContext } from '../cartContext/ProductsContext'
 
-export default function ItemCount({ stock, numero, subtractToCart, sumToCart, addToCart }) {
+export default function ItemCount({ item, numero, subtractToCart, sumToCart }) {
+    const context = useContext(ProductsContext)
+
+    function addToCart() {
+        let adding = {
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            quantity: numero,
+        }
+        context.bag(adding)
+    }
 
     return (
     <div className="counter">
@@ -10,9 +22,9 @@ export default function ItemCount({ stock, numero, subtractToCart, sumToCart, ad
         <div className="number">
             <span>{numero}</span>
         </div>
-        {numero < stock && <button onClick={sumToCart}>+</button>}
+        {numero < item.stock && <button onClick={sumToCart}>+</button>}
         <div>
-            <button onClick={addToCart}>Agregar al carrito</button>
+            <button onClick={addToCart}>Agregar a la bolsa</button>
         </div>
     </div>)
 
