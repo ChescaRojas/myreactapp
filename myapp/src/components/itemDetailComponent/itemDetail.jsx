@@ -4,25 +4,26 @@ import ItemCount from "../itemCount/itemCount";
 import "./itemDetail.scss"
 
 export default function ItemDetail({ item }) {
-  const [cantidad, setCantidad] = useState(1);
+  const [numero, setNumero] = useState(1);
 
-    function addToCart() {
-        if (cantidad < item.stock)
-            setCantidad(cantidad + 1)
+    function sumToCart() {
+        if (numero < item.stock)
+          setNumero(numero + 1)
     }
     function subtractToCart() {
-        if (cantidad > 1)
-            setCantidad(cantidad - 1)
+        if (numero > 1)
+          setNumero(numero - 1)
     }
+
   return (<div className="itemDetails">
     <img className="itemDetails__image" src={item.url} />
     <div className="itemDetails__card">
       <span  className="itemDetails__card__name" >{item.name}</span>
       <span  className="itemDetails__card__description" >{item.description}</span>
-      <span  className="itemDetails__card__price" >{'$'+item.price}</span>
+      <span  className="itemDetails__card__price" >{item.price}</span>
     </div>
     <div className="itemDetails__count">
-    <ItemCount cantidad={cantidad} stock={item.stock} addToCart={addToCart} subtractToCart={subtractToCart} />
+    <ItemCount numero={numero} item={item} sumToCart={sumToCart} subtractToCart={subtractToCart} />
     </div>
   </div>)
 
