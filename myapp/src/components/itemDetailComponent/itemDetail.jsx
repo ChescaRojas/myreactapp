@@ -17,10 +17,10 @@ export default function ItemDetail({ item }) {
 
   return (<div className="itemDetails">
     <img className="itemDetails__image" src={item.url} />
-    <div className="itemDetails__card">
-      <span  className="itemDetails__card__name" >{item.name}</span>
-      <span  className="itemDetails__card__description" >{item.description}</span>
-      <span  className="itemDetails__card__price" >{item.price}</span>
+    <div className="itemDetails__bag">
+      <span  className="itemDetails__bag__name" >{item.name}</span>
+      <span  className="itemDetails__bag__description" >{item.description}</span>
+      <span  className="itemDetails__bag__price" >{item.price}</span>
     </div>
     <div className="itemDetails__count">
     <ItemCount numero={numero} item={item} sumToCart={sumToCart} subtractToCart={subtractToCart} />

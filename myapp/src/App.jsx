@@ -12,6 +12,8 @@ import NavBarComponent from './components/navBarComponent/navBarComponent'
 import ItemListContainer from './components/itemListContainer/itemListContainer'
 import ItemDetailsContainer from './components/itemDetailsContainer/itemDetailsContainer'
 import CartContext from './components/cartContext/CartContext';
+import CartListContainer from './components/cartListContainer/cartListContainer'
+
 
 export default function App() {
   const [itemDetail, setItemDetail] = useState();
@@ -22,9 +24,12 @@ export default function App() {
         <div>
           <NavBarComponent />
           <Routes>
-          <Route path="/item/:id"element={<ItemDetailsContainer item={itemDetail}/>}/> 
+            <Route path="/item/:id" element={<ItemDetailsContainer item={itemDetail} />} />
             <Route exact path="/">
-              <Route exact path='/' element={ <ItemListContainer setItemDetail={setItemDetail} />}/> 
+              <Route exact path='/' element={<ItemListContainer setItemDetail={setItemDetail} />} />
+            </Route>
+            <Route exact path="/bag">
+              <Route exact path='/bag' element={<CartListContainer />} />
             </Route>
           </Routes>
         </div>

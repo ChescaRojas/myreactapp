@@ -8,12 +8,12 @@ export default function Item({ item, setItemDetail }) {
   }
   return (
     <Link to={`/item/${item.id}`}>
-      <div onClick={selectItem} className="card">
+      <div onClick={selectItem} className="bag">
       <div className="">
-           <p className="card__span">{item.price}</p>
-          <p className="card__span">{item.name}</p>
+           <p className="bag__span">{item.price}</p>
+          <p className="bag__span">{item.name}</p>
         </div>
-        <div className="card__img">
+        <div className="bag__img">
           <img className="image" src={item.url} />
         </div>
       </div>

@@ -4,7 +4,7 @@ import "./itemDetailsContainer.scss"
 
 export default function ItemDetailsContainer({item}) {
 
-  return (<div className="detailsContainer">
+  return (<div className="container">
     {item && <ItemDetail item={item}/>}
   </div>)
 
