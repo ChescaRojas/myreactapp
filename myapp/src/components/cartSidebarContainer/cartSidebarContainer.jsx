@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./cartSidebarContainer.scss"
 
 
-export default function CartSidebarContainer({priceContext}) {
+export default function CartSidebarContainer({price}) {
   return (<div className="bagSidebar">
-    <p>Precio total:</p>
-    {priceContext}
+    <p>Total a pagar:</p>
+    {'$ '+ price}
   </div>)
-
+  
 }

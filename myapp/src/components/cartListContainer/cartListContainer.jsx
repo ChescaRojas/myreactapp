@@ -6,12 +6,12 @@ import { ProductsContext } from '../cartContext/ProductsContext'
 
 
 export default function CartListContainer() {
-  const {cartContext , priceContext, Less, Plus} = useContext(ProductsContext)
+  const {cartContext , price, Less, Plus} = useContext(ProductsContext)
   return (<div className="cartView">
-    {cartContext.length > 0 ? (
+    {cartContext.length != 0 ? (
     <div className="cartItemList">
       <CartListComponent items={cartContext} Less={Less} Plus={Plus} /> 
-      <CartSidebarContainer priceContext={priceContext}/>
+      <CartSidebarContainer price={price}/>
     </div> 
     ) : <div>Empty</div>}
   </div>)

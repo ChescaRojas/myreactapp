@@ -12,12 +12,12 @@ export default function CartItemComponent({ item, Less, Plus}) {
           <p className="cartCard__span">{item.name}</p>
           <div className="cartCard__counter">
             <button disabled={item.quantity <= 1} onClick={() => Less(item)}>-</button>
-            <div className="cartCard__counter--number">
+            <div className="cartCard__counter__quantity">
                 <span>{item.quantity}</span>
             </div>
             <button disabled={item.quantity >= item.stock} onClick={() => Plus(item)}>+</button>
         </div>
-          <p className="cartCard__span">{'$' + item.price}</p>
+          <p className="cartCard__span">{item.price}</p>
         </div>
       </div>)
 
